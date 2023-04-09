@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   php-apache-environment:
-    container_name: my-php-apache
+    container_name: my-php-team
     build:
       context: ./phpDir
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     ports:
       - 8006:80
   db:
-    container_name: mydb
+    container_name: mydb1
     image: mysql
     restart: always
     environment:
