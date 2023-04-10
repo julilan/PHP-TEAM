@@ -18,7 +18,7 @@
 
             <label for="c2k">Celcius to Kelvin</label>
             <input type="number" id="c2k" name="c2k">
-            <input type="submit">
+            <input type="submit" value="convert">
 
         </form>
         
@@ -36,13 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if(!empty($celcius2farenheit)){
         $c2f = $celcius2farenheit * 1.8 + 32;
-        echo $celcius2farenheit . '°C ' . 'to farenreit is'. ' ' . floatval($c2f) . '<br>';
+        echo $celcius2farenheit . '°C ' . 'to farenreit is'. ' ' . floatval($c2f) . 'F' . '<br>';
         
     }
     
     if(!empty($celcius2kelvin)){
         $c2k = floatval($celcius2kelvin) + 273.15;
-        echo $celcius2kelvin . '°C ' . 'to kelvin is' . ' ' .floatval($c2k);
+        echo $celcius2kelvin . '°C ' . 'to kelvin is' . ' ' .floatval($c2k) . 'K';
 
     }
 }
