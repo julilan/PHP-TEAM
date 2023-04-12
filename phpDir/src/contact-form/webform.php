@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $subject = trim($_POST['subject']);
     $message = trim($_POST['message']);
     
-    // Browser built-in "required" attribute does the empty check for name, email and subject
+    // Name, email and subject inputs having the "required" attribute makes browser's built-in validation check for empty fields. To make sure email input value is in valid format we need to do additional validation for email.
     
     // Getting domain
     $atPos = mb_strpos($email, '@');
