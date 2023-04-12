@@ -1,8 +1,37 @@
+<?php
+
+$form_status = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Using trim method to remove accidental whitespaces
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $subject = trim($_POST['subject']);
+    $message = trim($_POST['message']);
+    
+    // Browser built-in "required" attribute does the empty check for name, email and subject
+    
+    // Getting domain
+    $atPos = mb_strpos($email, '@');
+    $domain = mb_substr($email, $atPos + 1);
+
+    // Validating email address
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $form_status = "Please enter a valid email address.";
+    } elseif (!checkdnsrr($domain . '.', 'MX')) { // checking domain
+        $form_status = "Domain $domain is not valid. Please enter a valid email address.";
+    } else {
+        $form_status = "Thank you, $name. Your message has been successfully sent.";
+    }
+}
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact form</title>
     <link rel="stylesheet" href="webform.css" media="all">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src="main.js"></script>
@@ -30,6 +59,9 @@
             <div>
                 <button type="submit" class="btn">Send Message!</button>
             </div>
+            <p>
+                <?=$form_status?>
+            </p>
         </form>
     </div>
 </body>
