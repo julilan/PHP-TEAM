@@ -5,6 +5,7 @@ $form_status = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Using trim method to remove accidental whitespaces
     $name = trim($_POST['name']);
+    $name = str_replace('/',null,$name);
     $email = trim($_POST['email']);
     $subject = trim($_POST['subject']);
     $message = trim($_POST['message']);
