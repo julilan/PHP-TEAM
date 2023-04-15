@@ -1,3 +1,27 @@
+<title>Mass Converter</title>
+<link rel="stylesheet" href="./css/style-mass.css"> 
+<body>
+<form method="post">
+<h1 id="mass-title">Mass Converter</h1>
+  <input type="number" name="weight" placeholder="Enter weight" id="weight-input" required>
+  <select name="from_unit" class="select-mass">
+    <option value="kg">Kilogram (kg)</option>
+    <option value="g">Gram (g)</option>
+    <option value="mg">Milligram (mg)</option>
+    <option value="lb">Pound (lb)</option>
+  </select>
+  <select name="to_unit" class="select-mass">
+    <option value="kg">Kilogram (kg)</option>
+    <option value="g">Gram (g)</option>
+    <option value="mg">Milligram (mg)</option>
+    <option value="lb">Pound (lb)</option>
+  </select>
+  <div id="mass-button">
+  <button type="submit" name="convert">Convert</button>
+  </div>
+
+  <p id="mass-result">
+
 <?php
 
 if(isset($_POST['convert'])) {
@@ -20,25 +44,16 @@ if(isset($_POST['convert'])) {
   // Convert from kilograms to the 'to_unit'
   $result = $kg * $conversion_factors[$to_unit];
   
-  echo "{$weight}{$from_unit} is equal to {$result}{$to_unit}";
-}
+   echo "{$weight}{$from_unit} is equal to {$result}{$to_unit}"; 
 
+} 
 ?>
+ 
+  </p>
 
-<form method="post">
-  <input type="number" name="weight" placeholder="Enter weight" required>
-  <select name="from_unit">
-    <option value="kg">Kilogram (kg)</option>
-    <option value="g">Gram (g)</option>
-    <option value="mg">Milligram (mg)</option>
-    <option value="lb">Pound (lb)</option>
-  </select>
-  <select name="to_unit">
-    <option value="kg">Kilogram (kg)</option>
-    <option value="g">Gram (g)</option>
-    <option value="mg">Milligram (mg)</option>
-    <option value="lb">Pound (lb)</option>
-  </select>
-  <button type="submit" name="convert">Convert</button>
 </form>
+
+</body>
+
+ 
 

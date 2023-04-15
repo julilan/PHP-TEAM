@@ -45,15 +45,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Converter</title>
+    <link rel="stylesheet" href="./css/style-speed.css">
 </head>
 <body>
-    <h1>Speed Converter</h1>
     <form action="speed.php" method="post">
-        <p><label for="kph">Kilometers per hour (km/h):</label>
-        <input type="number" name="kph" id="kph"></p>
-        <input type="submit" name="m_per_sec" value="Convert to m/s">
-        <input type="submit" name="knots" value="Convert to knots">
+    <h1>Speed Converter</h1>
+        <div id="kph-input-wrapper">
+        <label for="kph">Kilometers per hour (km/h):
+        </label>
+        <input type="number" name="kph" id="kph">
+        </div>
+        
+
+        <div class="button-wrapper">
+        <div class="button"><input type="submit" name="m_per_sec" value="Convert to m/s"></div>
+
+        <div class="button"><input type="submit" name="knots" value="Convert to knots"></div>
+</div>
+
+<p id="speed-result"><?= $result ?></p>
+
     </form>
-    <p><?= $result ?></p>
+    
 </body>
 </html>

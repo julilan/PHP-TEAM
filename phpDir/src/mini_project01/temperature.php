@@ -7,22 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
+    <link rel="stylesheet" href="./css/style-temperature.css">
 </head>
 <body>
     <Main>
-        <h1>Temperature Converter</h1>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-            <label for="c2f">Celcius to fahrenheit</label>
+        <h1>Temperature Converter</h1>
+            <div class="form-field">
+           <label for="c2f">Celcius to fahrenheit</label>
             <input type="number" id="c2f" name="c2f">
+            </div>
 
-
+            <div class="form-feild">
             <label for="c2k">Celcius to Kelvin</label>
             <input type="number" id="c2k" name="c2k">
-            <input type="submit" value="convert">
+            </div>
 
-        </form>
-        
-<?php
+            <div id="submit-wrapper">
+            <input type="submit" value="convert">
+            </div>
+
+            <p id="temperature-result">
+
+            <?php
 //  Temperature 
 //  1.Convert temperature from Celsius to Fahrenheit 
 //  2.Convert temperature from Celsius to Kelvin
@@ -47,6 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+</p>
+
+        </form>
+        
+
 
     </Main>
 

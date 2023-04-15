@@ -1,0 +1,61 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(195, 247, 211);
+    font-family: sans-serif;
+  }
+
+  form {
+    margin: 4em;
+    padding: 2em; 
+    max-width: 550px;
+    border: 1px solid grey;
+    background-color: rgb(180, 233, 195);
+  }
+
+  h1 {
+    padding: 1em;
+    text-align: center;
+  }
+
+  label {
+    padding: 2em;
+  }
+
+  #kph-input-wrapper {
+    margin-top: 1.5em; 
+    margin-left: 1.5em;
+  }
+
+  #kph, input[type='submit'] {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(251, 251, 251);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
+
+  input[type='submit']:hover {
+    background-color: rgb(150, 201, 184);
+  }
+
+  .button {
+    padding: 1em;
+  }
+  
+  .button-wrapper {
+    display: flex;
+    padding: 1em;
+    padding-left: 4em; 
+  }
+
+  #speed-result {
+    padding: 1em;
+    text-align: center;
+
+  }

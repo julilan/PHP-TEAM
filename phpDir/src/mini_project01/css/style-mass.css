@@ -1,0 +1,68 @@
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(195, 247, 247);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form {
+  margin: 4em;
+  padding: 2em; 
+  max-width: 550px;
+  border: 1px solid grey;
+  background-color: rgb(180, 241, 241);
+}
+
+#mass-title {
+  margin: 1em;
+}
+
+ #weight-input {
+  background-color: azure;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+  margin: 1.5em;
+  text-align: center;
+} 
+
+.select-mass {
+  width: 120px;
+  height: 40px;
+  margin: 1em;
+  background-color: azure;
+  border: none;
+  border-radius: 5px;
+}
+
+option {
+  text-align: center;
+}
+
+#mass-button {
+  margin: 1em;
+  padding: 0.5em;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: azure;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: rgb(194, 221, 243);
+}
+
+#mass-result {
+  margin: 1.5em;
+} 
