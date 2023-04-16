@@ -74,10 +74,18 @@ textarea{
     resize:none;
 }
 
-
-
 .focused > .form-label{
     opacity:1;
     transform:translateX(0px);
 
+}
+
+.error {
+    color: red;
+    font-size: small;
+}
+
+.success {
+    color: greenyellow;
+    font-size: small;
 }
