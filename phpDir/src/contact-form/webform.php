@@ -2,14 +2,27 @@
 
 $form_status = '';
 
+
+function sanitise_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+   
+
+};
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Using trim method to remove accidental whitespaces
-    $name = trim($_POST['name']);
-    $name = str_replace('/' ,'null',$name);
-    $email = trim($_POST['email']);
-    $subject = trim($_POST['subject']);
-    $message = trim($_POST['message']);
-    
+    $name = sanitise_input($_POST['name']);
+    $email = sanitise_input($_POST['email']);
+    $subject = sanitise_input($_POST['subject']);
+    $message = sanitise_input($_POST['message']);
+
+  
+
+
     // Name, email and subject inputs having the "required" attribute makes browser's built-in validation check for empty fields. To make sure email input value is in valid format we need to do additional validation for email.
     
     // Getting domain
@@ -21,7 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $form_status = "Please enter a valid email address.";
     } elseif (!checkdnsrr($domain . '.', 'MX')) { // checking domain
         $form_status = "Domain $domain is not valid. Please enter a valid email address.";
-    } else {
+    } elseif(empty($name)){             
+        $form_status = "Error! You didn't enter the name";
+    }      //this checks if the field is empty (remove required from input in form)
+    elseif(!preg_match("/^[a-zA-z]*$/",$name)){
+        $form_status = "Only alphabets are allowed. Please enter your name again";   
+    }
+    else {
         $form_status = "Thank you, $name. Your message has been successfully sent.";
     }
 }
@@ -43,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="webform.php" method="POST" class="form">
             <div class="form-group">
                 <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe" tabindex="1" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe" tabindex="1" required >
             </div>
             <div class="form-group">
                 <label for="email" class="form-label">Your Email</label>
