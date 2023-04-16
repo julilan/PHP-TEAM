@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if(!empty($celcius2farenheit)){
         $c2f = $celcius2farenheit * 1.8 + 32;
-        echo $celcius2farenheit . '°C ' . 'to farenreit is'. ' ' . floatval($c2f) . 'F' . '<br>';
+        echo $celcius2farenheit . '°C ' . 'to fahrenheit is'. ' ' . floatval($c2f) . 'F' . '<br>';
         
     }
     
