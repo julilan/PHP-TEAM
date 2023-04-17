@@ -1,5 +1,5 @@
 <nav>
-  <h3>Team &alpha; Measurement Converters</h5>
+  <h3>Measurement Converters</h5>
   <ul>
     <li>
       <a href="./mass.php">Mass</a>
