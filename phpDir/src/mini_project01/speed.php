@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         if (isset($_POST["m_per_sec"])) {
             $m_per_sec = $kph * 0.277778;
-            $result = $kph . " kilometers per hour equals " . round($m_per_sec,2) . " meters per second.";
+            $result = $kph . " km/h equals " . round($m_per_sec,2) . " m/s";
         }
         elseif (isset($_POST["knots"])) {
             $knots = $kph * 0.539957;
-            $result = $kph . " kilometers per hour equals " . round($knots,2) . " knots.";
+            $result = $kph . " km/h equals " . round($knots,2) . " knots";
         }
     } else {
         $result = "Please enter a value for kilometers per hour.";
@@ -46,26 +46,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Converter</title>
     <link rel="stylesheet" href="./css/style-speed.css">
+    <link rel="stylesheet" href="./css/nav.css">
 </head>
 <body>
+    <?php
+        include './includes/nav.php';
+    ?>
     <form action="speed.php" method="post">
-    <h1>Speed Converter</h1>
+        <h1>Speed Converter</h1>
         <div id="kph-input-wrapper">
-        <label for="kph">Kilometers per hour (km/h):
-        </label>
-        <input type="number" name="kph" id="kph">
+            <label for="kph">Kilometers per hour (km/h):
+            </label>
+            <input type="number" name="kph" id="kph">
         </div>
-        
-
         <div class="button-wrapper">
-        <div class="button"><input type="submit" name="m_per_sec" value="Convert to m/s"></div>
-
-        <div class="button"><input type="submit" name="knots" value="Convert to knots"></div>
-</div>
-
-<p id="speed-result"><?= $result ?></p>
-
+            <div class="button"><input type="submit" name="m_per_sec" value="Convert to m/s"></div>
+            <div class="button"><input type="submit" name="knots" value="Convert to knots"></div>
+        </div>
+        <p id="speed-result"><?= $result ?></p>
     </form>
-    
 </body>
 </html>
