@@ -1,6 +1,17 @@
-<title>Mass Converter</title>
-<link rel="stylesheet" href="./css/style-mass.css"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mass Converter</title>
+  <link rel="stylesheet" href="./css/style-mass.css"> 
+  <link rel="stylesheet" href="./css/nav.css">
+</head>
 <body>
+  <?php
+    include './includes/nav.php';
+  ?>
 <form method="post">
 <h1 id="mass-title">Mass Converter</h1>
   <input type="number" name="weight" placeholder="Enter weight" id="weight-input" required>
@@ -44,7 +55,7 @@ if(isset($_POST['convert'])) {
   // Convert from kilograms to the 'to_unit'
   $result = $kg * $conversion_factors[$to_unit];
   
-   echo "{$weight}{$from_unit} is equal to {$result}{$to_unit}"; 
+   echo "{$weight} {$from_unit} is equal to {$result} {$to_unit}"; 
 
 } 
 ?>
@@ -54,6 +65,4 @@ if(isset($_POST['convert'])) {
 </form>
 
 </body>
-
- 
-
+</html>
