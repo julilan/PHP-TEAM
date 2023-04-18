@@ -10,11 +10,11 @@
   }
 
   form {
-    margin: 4em;
     padding: 2em; 
     max-width: 550px;
     border: 1px solid grey;
     background-color: rgb(180, 233, 195);
+    margin: auto;
   }
 
   h1 {
@@ -38,6 +38,7 @@
     border: none;
     border-radius: 5px;
     padding: 0.5em;
+    font-weight: bold;
   }
 
   input[type='submit']:hover {

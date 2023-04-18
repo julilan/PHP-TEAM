@@ -4,6 +4,9 @@
   padding:0;
   box-sizing: border-box;
 }
+h1{
+  text-align: center;
+}
 
 body {
   background-color: rgb(195, 247, 247);
@@ -11,11 +14,14 @@ body {
 }
 
 form {
-  margin: 4em;
   padding: 2em; 
   max-width: 550px;
   border: 1px solid grey;
   background-color: rgb(180, 241, 241);
+  margin: auto;
+}
+form select{
+  padding: 0.3rem;
 }
 
 #mass-title {
@@ -57,6 +63,7 @@ button {
   border: none;
   border-radius: 5px;
   text-align: center;
+  font-weight: bold;
 }
 
 button:hover {
