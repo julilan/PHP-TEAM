@@ -25,7 +25,7 @@ docker-compose up
 
 ### Project 2: Form
 
-- [Contact form](http://localhost:8006/project1-form/webform.php)
+- [Contact form](http://localhost:8006/project2-form/webform.php)
 
 ### Project 3: Todo App
 
