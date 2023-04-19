@@ -10,7 +10,6 @@ h1{
 
 body {
   background-color: rgb(195, 247, 247);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 form {
@@ -22,6 +21,7 @@ form {
 }
 form select{
   padding: 0.3rem;
+  font-family: inherit;
 }
 
 #mass-title {
@@ -36,6 +36,7 @@ form select{
   height: 40px;
   margin: 1.5em;
   text-align: center;
+  font-family: inherit;
 } 
 
 .select-mass {
@@ -64,6 +65,7 @@ button {
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
+  font-family: inherit;
 }
 
 button:hover {

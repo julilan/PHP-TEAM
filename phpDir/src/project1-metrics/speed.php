@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         if (isset($_POST["m_per_sec"])) {
             $m_per_sec = $kph * 0.277778;
-            $result = $kph . " kilometers per hour equals " . round($m_per_sec,2) . " meters per second.";
+            $result = $kph . " km/h is equal to " . round($m_per_sec,2) . " m/s";
         }
         elseif (isset($_POST["knots"])) {
             $knots = $kph * 0.539957;
-            $result = $kph . " kilometers per hour equals " . round($knots,2) . " knots.";
+            $result = $kph . " km/h is equal to " . round($knots,2) . " knots";
         }
     } else {
         $result = "Please enter a value for kilometers per hour.";

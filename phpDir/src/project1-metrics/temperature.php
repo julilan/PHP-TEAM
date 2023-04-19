@@ -17,7 +17,7 @@
             </div>
 
             <div id="submit-wrapper">
-            <input type="submit" value="convert">
+            <input type="submit" value="Convert">
             </div>
 
             <p id="temperature-result">
