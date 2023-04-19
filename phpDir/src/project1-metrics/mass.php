@@ -47,7 +47,7 @@ if(isset($_POST['convert'])) {
   // Convert from kilograms to the 'to_unit'
   $result = $kg * $conversion_factors[$to_unit];
   
-   echo "{$weight}{$from_unit} is equal to {$result}{$to_unit}"; 
+   echo "{$weight} {$from_unit} is equal to {$result} {$to_unit}";
 
 } 
 ?>
