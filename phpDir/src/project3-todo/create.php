@@ -37,12 +37,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <form method="post">
   <div class="mb-3">
     <label>ToDo title</label>
-    <input type="text" class="form-control" name="title" placeholder="Enter toDo title">
+    <input type="text" class="form-control" name="title" placeholder="Enter toDo title" required>
   </div>
 
   <div class="mb-3">
     <label>ToDo Description</label>
-    <input type="text" class="form-control" name="description" placeholder="Enter toDo description">
+    <input type="text" class="form-control" name="description" placeholder="Enter toDo description" required>
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit">Add</button>

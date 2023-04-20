@@ -6,14 +6,18 @@
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
         <h1>Temperature Converter</h1>
             <div class="form-field">
-           <label for="c2f">Celcius to fahrenheit</label>
-            <input type="number" id="c2f" name="c2f">
+           <label for="celcius">Temperature in celcius</label>
+            <input type="number" id="celcius" name="celcius">
             </div>
 
-            <div class="form-feild">
+            <!-- <div class="form-feild">
             <label for="c2k">Celcius to Kelvin</label>
             <input type="number" id="c2k" name="c2k">
-            </div>
+            </div> -->
+            <select name="convert" id="convert">
+                <option value="c2f">Celcius to Farenheit</option>
+                <option value="c2k">Celcius to Kelvin</option>
+            </select>
 
             <div id="submit-wrapper">
             <input type="submit" value="Convert">
@@ -28,22 +32,34 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $celcius2farenheit = $_POST['c2f'];
+    $celcius = $_POST['celcius'];
     
-    $celcius2kelvin = $_POST['c2k'];
+    // $celcius2kelvin = $_POST['c2k'];
+
+    $metric = $_POST['convert'];
 
     
-    if(!empty($celcius2farenheit)){
-        $c2f = $celcius2farenheit * 1.8 + 32;
-        echo $celcius2farenheit . '°C ' . 'to fahrenheit is'. ' ' . floatval($c2f) . 'F' . '<br>';
+    if(!empty($celcius)){
+
+        if($metric == 'c2f'){
+            
+                    $temperature = $celcius * 1.8 + 32;
+                    echo $celcius . '°C ' . 'to fahrenheit is'. ' ' . floatval($temperature) . 'F' . '<br>';
+
+        } else{
+            $temperature = floatval($celcius) + 273.15;
+            echo $celcius . '°C ' . 'to kelvin is' . ' ' .floatval($temperature) . 'K';
+        }
+
+
         
     }
     
-    if(!empty($celcius2kelvin)){
-        $c2k = floatval($celcius2kelvin) + 273.15;
-        echo $celcius2kelvin . '°C ' . 'to kelvin is' . ' ' .floatval($c2k) . 'K';
+    // if(!empty($celcius2kelvin)){
+    //     $c2k = floatval($celcius2kelvin) + 273.15;
+    //     echo $celcius2kelvin . '°C ' . 'to kelvin is' . ' ' .floatval($c2k) . 'K';
 
-    }
+    // }
 }
 ?>
 </p>
