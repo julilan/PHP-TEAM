@@ -1,18 +1,25 @@
 <?php
 include 'db.php';
 
-if(isset($_POST['submit'])) {
-  $title=$_POST['title'];
-  $description=$_POST['description'];
+if($_SERVER['REQUEST_METHOD']=='POST'){
 
-  $sql="insert into todos(todoTitle, todoDescription) values('$title','$description')";
-  $result=mysqli_query($conn, $sql);
-  if($result) {
-    // echo "Data inserted successfully";
-    header('location:home.php');
-  }
-  else {
-    die(mysqli_error($conn));
+  
+  if(isset($_POST['submit'])) {
+    $title=$_POST['title'];
+    $description=$_POST['description'];
+
+    $title = htmlspecialchars($title);
+    $description = htmlspecialchars($description);
+    
+    $sql="insert into todos(todoTitle, todoDescription) values('$title','$description')";
+    $result=mysqli_query($conn, $sql);
+    if($result) {
+      // echo "Data inserted successfully";
+      header('location:home.php');
+    }
+    else {
+      die(mysqli_error($conn));
+    }
   }
 }
 ?>
