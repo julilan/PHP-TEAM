@@ -15,9 +15,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     }
     else {
         $name=testInput($_POST["name"]);
-        if(!preg_match("/^[a-zA-Z-']*\s?[a-zA-Z-']*$/", $name)) {
-        $nameErr="Invalid name.Only letters and white space are allowed.";
-    }
+        // Allowing international letters with the property '\p{L}' that matches any Unicode letter character
+        if (!preg_match("/^[\p{L}\s\-']+$/u",$name)) {
+            $nameErr = "Invalid name. Only letters, spaces, hyphens, and apostrophes are allowed.";
+        }        
     }
 
     if(empty($_POST["email"])) {
