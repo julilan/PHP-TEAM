@@ -11,15 +11,16 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $title = htmlspecialchars($title);
     $description = htmlspecialchars($description);
     
-    $sql="insert into todos(todoTitle, todoDescription) values('$title','$description')";
-    $result=mysqli_query($conn, $sql);
-    if($result) {
-      // echo "Data inserted successfully";
-      header('location:home.php');
-    }
-    else {
-      die(mysqli_error($conn));
-    }
+    $stmt=$conn->prepare("insert into todos(todoTitle, todoDescription) values(?,?)");
+    $stmt->bind_param("ss", $title, $description);
+   
+    $stmt->execute();
+
+    echo "New Todo created successfully";
+
+    $stmt->close();
+    $conn->close();
+   
   }
 }
 ?>

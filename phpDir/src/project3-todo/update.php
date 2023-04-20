@@ -16,15 +16,25 @@ if(isset($_POST['submit'])) {
   $title=$_POST['title'];
   $description=$_POST['description'];
 
-  $sql="update todos set id=$id, todoTitle='$title', todoDescription='$description' where id=$id";
-  $result=mysqli_query($conn, $sql);
-  if($result) {
-     // echo "Data updated successfully";
-     header('location:home.php');
-  }
-  else {
-    die(mysqli_error($conn));
-  }
+  $title = htmlspecialchars($title);
+  $description = htmlspecialchars($description);
+
+  $stmt=$conn->prepare("update todos set id=?, todoTitle=?, todoDescription=? where id=?");
+  $stmt->bind_param('issi', $id, $title, $description, $id);
+  $stmt->execute();
+
+  echo "Todo updated successfully";
+
+  $stmt->close();
+  $conn->close();
+  // $result=mysqli_query($conn, $sql);
+  // if($result) {
+  //    // echo "Data updated successfully";
+  //    header('location:home.php');
+  // }
+  // else {
+  //   die(mysqli_error($conn));
+  // }
 }
 ?>
 
