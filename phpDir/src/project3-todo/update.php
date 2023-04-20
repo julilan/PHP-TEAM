@@ -1,6 +1,8 @@
 <?php
 include 'db.php';
 
+include '../header.php';
+
 $id=$_GET['updateid'];
 $sql="select * from todos where id=$id";
 $result=mysqli_query($conn, $sql);
