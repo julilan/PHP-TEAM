@@ -6,6 +6,18 @@ Use this form to create validation and handle contact form
 
 The basic assumption is such that you will have to deploy it in live PHP server somewhere to see it working.
 
+Form in public bc server: https://public.bc.fi/s2300103/php-form/index.php
+Note! Locally names with international characters such as äöáü and apostrophes ' are passing the check with
+
+```php
+// Allowing international letters with the property '\p{L}' that matches any Unicode letter character
+if (!preg_match("/^[\p{L}\s\-']+$/u",$name)) {
+  $nameErr = "Invalid name. Only letters, spaces, hyphens, and apostrophes are allowed.";
+}
+```
+
+but in the public bc server they are not. So names such as María García, Sophie O'Connor and Heikki Kärkkäinen are not allowed but locally they are.
+
 ## Getting Started
 
 1. Use the webform.html
