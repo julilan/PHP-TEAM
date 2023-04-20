@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 ?>
 <?php include '../header.php' ?>
-<link rel="stylesheet" href="./css/style-temperature.css">
 <body>
     <Main>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">

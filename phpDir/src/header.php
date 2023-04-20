@@ -16,12 +16,19 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="webform.css" media="all">
     <link rel="stylesheet" href="./css/style-mass.css">
+    <link rel="stylesheet" href="./css/style-temperature.css">
+    <link rel="stylesheet" href="./css/style-speed.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
    
-    <?php if($_SERVER['PHP_SELF']=='/project3-todo/home.php' || 'project3-todo/create.php'){
+    <?php if($_SERVER['PHP_SELF']=='/project3-todo/home.php' or $_SERVER['PHP_SELF']== 'project3-todo/create.php'){
         echo '
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">';
-    }
-    ?>
+    } 
+    ?> 
 </head>
 
 
@@ -128,8 +135,22 @@
             </ul>
             </nav>
             ';
+        }
+        else {
+            echo '
+            <nav>
+            <ul>
+            <li><a href="/">Projects</a> </li>
+            <li><a href="/project1-metrics/project1-landing.php">Metrics</a> </li>
+            <li><a href="/project2-form/webform.php">Contact</a> </li>
+            <li><a href="/project3-todo/home.php">Todo</a> </li>
+            
+            </ul>
+            </nav>
+            ';
 
         }
+        
 
         ?>
 </header>

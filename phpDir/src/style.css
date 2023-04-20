@@ -19,6 +19,7 @@ header{
     position: absolute;
     top: 0;
     left: 0;
+    height: 5rem;
     width: 100%;
     
 }
@@ -129,3 +130,17 @@ section a{
     width:301px;
     height: 301px;
 }
+a.text-light{
+    text-decoration: none;
+}
+
+@media screen and (max-width:479px){
+    .h1, h1{
+        font-size: 1rem!important;
+    }
+    nav ul li{
+        font-size: 0.9rem;
+    }
+}
+
+
