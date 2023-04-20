@@ -24,7 +24,7 @@ if(isset($_POST['submit'])) {
     <div class="container my-5">
     <form method="post">
   <div class="mb-3">
-    <label>ToDo title</label>
+    <label>ToDo Title</label>
     <input type="text" class="form-control" name="title" placeholder="Enter toDo title">
   </div>
 

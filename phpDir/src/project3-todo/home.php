@@ -4,7 +4,7 @@ include 'db.php'; ?>
 <?php include '../header.php' ?>
 <body>
     <div class="container">
-        <button class="btn btn-primary my-5"><a href="create.php" class="text-light">Add task</a></button>
+        <button class="btn btn-primary my-5"><a href="create.php" class="text-light text-decoration-none">Add task</a></button>
 
         <table class="table">
   <thead>
@@ -30,7 +30,7 @@ include 'db.php'; ?>
             <td>'.$title.'</td>
             <td>'.$description.'</td>
             <td>
-            <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
+            <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light text-decoration-none">Update</a></button>
             <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
            </td>
           </tr>';
