@@ -15,8 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="webform.css" media="all">
-    <link rel="stylesheet" href="./css/style-mass.css"> 
-
+    <link rel="stylesheet" href="./css/style-mass.css">
+   
+    <?php if($_SERVER['PHP_SELF']=='/project3-todo/home.php' || 'project3-todo/create.php'){
+        echo '
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">';
+    }
+    ?>
 </head>
 
 
@@ -106,6 +111,19 @@
             <li><a href="/">Projects</a> </li>
             <li><a href="/project1-metrics/mass.php">Mass</a> </li>
             <li><a href="/project1-metrics/speed.php">Speed</a> </li>
+            
+            </ul>
+            </nav>
+            ';
+
+        }
+        else if($_SERVER['PHP_SELF']=='/project3-todo/home.php' || 'project3-todo/create.php'){
+            echo '
+            <nav>
+            <ul>
+            <li><a href="/">Projects</a> </li>
+            <li><a href="/project3-todo/home.php">Todos</a> </li>
+            <li><a href="/project3-todo/create.php">Add Todo</a> </li>
             
             </ul>
             </nav>
