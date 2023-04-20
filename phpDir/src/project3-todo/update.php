@@ -23,10 +23,13 @@ if(isset($_POST['submit'])) {
   $stmt->bind_param('issi', $id, $title, $description, $id);
   $stmt->execute();
 
-  echo "Todo updated successfully";
+  //echo "Todo updated successfully";
 
   $stmt->close();
   $conn->close();
+
+  header("Location:home.php");
+  exit();
   // $result=mysqli_query($conn, $sql);
   // if($result) {
   //    // echo "Data updated successfully";

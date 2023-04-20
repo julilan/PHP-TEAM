@@ -16,10 +16,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
    
     $stmt->execute();
 
-    echo "New Todo created successfully";
+    //echo "New Todo created successfully";
 
     $stmt->close();
     $conn->close();
+
+    header("Location: home.php");
+    exit();
+  
    
   }
 }
