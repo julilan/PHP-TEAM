@@ -10,10 +10,7 @@
             <input type="number" id="celcius" name="celcius">
             </div>
 
-            <!-- <div class="form-feild">
-            <label for="c2k">Celcius to Kelvin</label>
-            <input type="number" id="c2k" name="c2k">
-            </div> -->
+            
             <select name="convert" id="convert">
                 <option value="c2f">Celcius to Farenheit</option>
                 <option value="c2k">Celcius to Kelvin</option>
@@ -26,15 +23,12 @@
             <p id="temperature-result">
 
             <?php
-//  Temperature 
-//  1.Convert temperature from Celsius to Fahrenheit 
-//  2.Convert temperature from Celsius to Kelvin
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $celcius = $_POST['celcius'];
     
-    // $celcius2kelvin = $_POST['c2k'];
 
     $metric = $_POST['convert'];
 
@@ -50,16 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $temperature = floatval($celcius) + 273.15;
             echo $celcius . '°C ' . 'to kelvin is' . ' ' .floatval($temperature) . 'K';
         }
-
-
         
+    } else{
+        echo 'Enter a value in celcius';
     }
     
-    // if(!empty($celcius2kelvin)){
-    //     $c2k = floatval($celcius2kelvin) + 273.15;
-    //     echo $celcius2kelvin . '°C ' . 'to kelvin is' . ' ' .floatval($c2k) . 'K';
-
-    // }
 }
 ?>
 </p>
