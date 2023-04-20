@@ -5,7 +5,7 @@
 <body>
 <form method="post">
 <h1 id="mass-title">Mass Converter</h1>
-  <input type="number" name="weight" placeholder="Enter weight" id="weight-input" required>
+  <input type="number" step='any' name="weight" placeholder="Enter weight" id="weight-input" required>
   <select name="from_unit" class="select-mass">
     <option value="kg">Kilogram (kg)</option>
     <option value="g">Gram (g)</option>

@@ -7,7 +7,7 @@
         <h1>Temperature Converter</h1>
             <div class="form-field">
            <label for="celcius">Temperature in celcius</label>
-            <input type="number" id="celcius" name="celcius">
+            <input type="number" step='any' id="celcius" name="celcius">
             </div>
 
             

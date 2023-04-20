@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="kph-input-wrapper">
         <label for="kph">Kilometers per hour (km/h):
         </label>
-        <input type="number" name="kph" id="kph">
+        <input type="number" step='any' name="kph" id="kph">
         </div>
         
 
