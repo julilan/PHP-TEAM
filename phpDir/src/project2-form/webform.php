@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     }
     else {
         $name=testInput($_POST["name"]);
-        if(!preg_match("/^[a-zA-Z-']*$/", $name)) {
+        if(!preg_match("/^[a-zA-Z-']*\s?[a-zA-Z-']*$/", $name)) {
         $nameErr="Invalid name.Only letters and white space are allowed.";
     }
     }
