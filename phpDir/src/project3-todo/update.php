@@ -47,13 +47,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <div class="mb-3">
     <label>ToDo title</label>
     <input type="text" class="form-control" name="title" placeholder="Enter toDo title"
-    value="<?php echo $title;?>">
+    value="<?php echo $title;?>" maxlength='50'>
   </div>
   
   <div class="mb-3">
     <label>ToDo Description</label>
     <input type="text" class="form-control" name="description" placeholder="Enter toDo description"
-    value="<?php echo $description;?>">
+    value="<?php echo $description;?>" maxlength='250'>
   </div>
   
   <button type="submit" class="btn btn-primary" name="submit">Update</button>
